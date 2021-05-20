@@ -1,0 +1,42 @@
+{
+  "name": "@greenhorn/ts-struct",
+  "version": "0.0.1",
+  "description": "Data Structures Implemented in Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rigikulm/ts-data-structures.git"
+  },
+  "keywords": [
+    "Typescript",
+    "data",
+    "structures"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rigikulm/ts-data-structures/issues"
+  },
+  "homepage": "https://github.com/rigikulm/ts-data-structures#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^15.3.1",
+    "@types/sinon": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "chai": "^4.3.4",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.2",
+    "mocha": "^8.4.0",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2",
+    "sinon": "^10.0.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
