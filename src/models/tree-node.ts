@@ -4,13 +4,15 @@
  * TNode - models a Tree Node
  */
 export default class TNode {
-    private key;
-    private left: TNode | null;
-    private right: TNode | null;
-    constructor(key: any) {
-        this.key = key;
-        this.left = null;
-        this.right = null;
-    }
+  private key;
 
+  private left: TNode | null = null;
+
+  private right: TNode | null = null;
+
+  constructor(key: any) {
+    this.key = key;
+    // this.left = null;
+    // this.right = null;
+  }
 }
