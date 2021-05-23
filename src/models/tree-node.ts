@@ -1,18 +1,18 @@
+/* eslint-disable no-useless-constructor */
+/* eslint-disable no-empty-function */
 // Represents a node in a tree
 
 /**
  * TNode - models a Tree Node
  */
 export default class TNode {
-  private key;
+  left: TNode | undefined;
 
-  private left: TNode | null = null;
+  right: TNode | undefined;
 
-  private right: TNode | null = null;
+  constructor(public key: any) {}
 
-  constructor(key: any) {
-    this.key = key;
-    // this.left = null;
-    // this.right = null;
+  toString() {
+    return `${this.key}`;
   }
 }
