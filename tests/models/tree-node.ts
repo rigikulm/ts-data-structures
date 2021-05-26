@@ -7,8 +7,8 @@ describe('TNode unit tests', () => {
 
   it('Starts without left or right nodes', () => {
     tnode = new TNode({});
-    expect(tnode.left).to.be.undefined;
-    expect(tnode.right).to.be.undefined;
+    expect(tnode.left).to.be.null;
+    expect(tnode.right).to.be.null;
   });
 
   it('Displays a string version of the key', () => {

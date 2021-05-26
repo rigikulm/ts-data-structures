@@ -39,4 +39,12 @@ export default class BinarySearchTree {
       this.insertNode(node.right, key);
     }
   }
+
+  /**
+   * Returns the root of the tree
+   * @returns root object or null if no items in the tree
+   */
+  getRoot(): any {
+    return this.root;
+  }
 }

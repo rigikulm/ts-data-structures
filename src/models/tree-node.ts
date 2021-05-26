@@ -6,12 +6,15 @@
  * TNode - models a Tree Node
  */
 export default class TNode {
-  left!: TNode;
+  left: TNode | null;
 
-  right!: TNode;
+  right: TNode | null;
 
   // eslint-disable-next-line no-unused-vars
-  constructor(public key: any) {}
+  constructor(public key: any) {
+    this.left = null;
+    this.right = null;
+  }
 
   toString() {
     return `${this.key}`;
