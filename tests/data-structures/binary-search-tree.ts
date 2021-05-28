@@ -80,4 +80,33 @@ describe('BinarySearchTree unit tests', () => {
     assertNode(bst.getRoot(), key, left);
     assertNode(bst.getRoot().left, left, child);
   });
+
+  it('Search should not find key in empty tree', () => {
+    const key = 7;
+    bst = new BinarySearchTree();
+    expect(bst.search(key)).to.be.false;
+  });
+
+  it('Search should find root key', () => {
+    const key = 7;
+    const left = 5;
+    const right = 9;
+    bst = new BinarySearchTree();
+    bst.insert(key);
+    bst.insert(left);
+    bst.insert(right);
+    expect(bst.search(key)).to.be.true;
+  });
+
+  it('Search should find child keys', () => {
+    const key = 7;
+    const left = 5;
+    const right = 9;
+    bst = new BinarySearchTree();
+    bst.insert(key);
+    bst.insert(left);
+    bst.insert(right);
+    expect(bst.search(left)).to.be.true;
+    expect(bst.search(right)).to.be.true;
+  });
 });

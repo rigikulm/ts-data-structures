@@ -47,4 +47,37 @@ export default class BinarySearchTree {
   getRoot(): any {
     return this.root;
   }
+
+  /**
+   * Searches for the provided key in the tree
+   * @param key - the key to search for in the tree
+   * @returns Returns 'true' if the key was found, otherwise 'false'
+   */
+  search(key: any) {
+    return this.searchNode(this.root, key);
+  }
+
+  private searchNode(node: TNode | null, key: any): boolean {
+    if (node == null) {
+      return false;
+    }
+
+    const cmp = this.compareFn(key, node.key);
+    switch (cmp) {
+      case Compare.LESS_THAN:
+        return this.searchNode(node.left, key);
+      case Compare.BIGGER_THAN:
+        return this.searchNode(node.right, key);
+      default:
+        return true;
+    }
+
+  //   if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
+  //     return this.searchNode(node.left, key);
+  //   } else if (this.compareFn(key, node.key) === Compare.BIGGER_THAN) {
+  //     return this.searchNode(node.right, key);
+  //   }
+  //   // key is equal to node.item
+  //   return true;
+  }
 }
