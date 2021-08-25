@@ -71,13 +71,22 @@ export default class BinarySearchTree {
       default:
         return true;
     }
+  }
 
-  //   if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
-  //     return this.searchNode(node.left, key);
-  //   } else if (this.compareFn(key, node.key) === Compare.BIGGER_THAN) {
-  //     return this.searchNode(node.right, key);
-  //   }
-  //   // key is equal to node.item
-  //   return true;
+  /**
+   * Traverses tree in ascending order, invoking the callback for each key
+   * 
+   * @param callback - the function to call with each key in the tree
+   */
+  inOrderTraverse(callback: Function) {
+    this.inOrderTraverseNode(this.root, callback);
+  }
+
+  private inOrderTraverseNode(node: TNode | null, cb: Function) {
+    if (node != null) {
+      this.inOrderTraverseNode(node.left, cb);
+      cb(node.key);
+      this.inOrderTraverseNode(node.right, cb);
+    }
   }
 }

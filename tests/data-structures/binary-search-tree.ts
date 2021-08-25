@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import { BinarySearchTree } from '../../src/index';
+import {defaultCompare} from '../../src/lib/utils';
 
 type NodeValue = number | null;
 /**
@@ -108,5 +109,15 @@ describe('BinarySearchTree unit tests', () => {
     bst.insert(right);
     expect(bst.search(left)).to.be.true;
     expect(bst.search(right)).to.be.true;
+  });
+
+  it('inOrderTraverse should return keys in ascending order', () => {
+    const keys: number[] = [7, 5, 19, 11, 55, 3, 13, 20, 15, 32, 27];
+    const sortedKeys: any[] = [];
+    bst = new BinarySearchTree();
+    keys.forEach((val, idx) => { bst.insert(val); });
+    bst.inOrderTraverse((val: any) => { sortedKeys.push(val); });
+    console.log(sortedKeys);
+    expect(sortedKeys).to.equal(keys.sort(defaultCompare));
   });
 });
